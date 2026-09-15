@@ -1,0 +1,10 @@
+{
+  "name": "hdt-v3-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix Website run dev",
+    "build": "npm --prefix Website run build",
+    "preview": "npm --prefix Website run preview"
+  }
+}

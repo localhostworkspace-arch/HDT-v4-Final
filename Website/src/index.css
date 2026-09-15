@@ -1,0 +1,118 @@
+@import "tailwindcss";
+@import "./lab.css";
+
+@variant dark (&:where(.dark, .dark *));
+@variant light (&:where(:not(.dark), :not(.dark) *));
+
+:root {
+  --hdt-primary: #2563EB;
+  --hdt-primary-hover: #1D4ED8;
+  --hdt-primary-light: #EFF6FF;
+  --hdt-page-bg: #EAEFF6;
+  --hdt-card-bg: #FFFFFF;
+  --hdt-text-main: #172B4D;
+  --hdt-text-secondary: #64748B;
+  --hdt-border: #CBD5E1;
+  --hdt-success: #16A085;
+  --hdt-warning: #D97706;
+  --hdt-error: #DC2626;
+  --hdt-card-radius: 16px;
+}
+
+html.dark {
+  --hdt-primary: #3B82F6;
+  --hdt-primary-hover: #60A5FA;
+  --hdt-primary-light: #1E293B;
+  --hdt-page-bg: #0B1120;
+  --hdt-card-bg: #1E293B;
+  --hdt-text-main: #F1F5F9;
+  --hdt-text-secondary: #94A3B8;
+  --hdt-border: #334155;
+  --hdt-success: #10B981;
+  --hdt-warning: #F59E0B;
+  --hdt-error: #EF4444;
+}
+
+body {
+  margin: 0;
+  background-color: var(--hdt-page-bg);
+  color: var(--hdt-text-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+/* Dashboard Card Utilities */
+.hdt-card {
+  background-color: #ffffff;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(203, 213, 225, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.dark .hdt-card {
+  background-color: rgba(30, 41, 59, 0.95);
+  border: 1.5px solid rgba(51, 65, 85, 0.9);
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.5);
+}
+
+.hdt-card-interactive {
+  cursor: pointer;
+}
+
+.hdt-card-interactive:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 10px 28px -4px rgba(37, 99, 235, 0.16), 0 4px 12px rgba(15, 23, 42, 0.08), 0 0 0 1.5px #3B82F6;
+  transform: translateY(-2px);
+}
+
+html.dark .hdt-card-interactive:hover {
+  background-color: #1e293b;
+  border-color: #60A5FA;
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.7);
+}
+
+/* Universal Card Boundaries for all Tool Pages & Dashboard Cards in Light Mode */
+html:not(.dark) .rounded-2xl.border-slate-200,
+html:not(.dark) .rounded-2xl.border,
+html:not(.dark) .rounded-xl.border-slate-200 {
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(203, 213, 225, 0.35);
+}
+
+/* Universal Card Boundaries for all Tool Pages in Dark Mode */
+html.dark .rounded-2xl.border-slate-800,
+html.dark .rounded-xl.border-slate-800 {
+  border-color: rgba(51, 65, 85, 0.9) !important;
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.55);
+}
+
+.hdt-btn-primary {
+  background-color: var(--hdt-primary);
+  color: #FFFFFF;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.hdt-btn-primary:hover {
+  background-color: var(--hdt-primary-hover);
+}

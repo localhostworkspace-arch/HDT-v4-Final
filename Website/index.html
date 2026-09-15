@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2563EB" />
+    <meta name="description" content="HDT — Hardware Diagnostic Tool. Modern browser-based testing for keyboard, mouse, display, speed, sound, and controllers. No downloads or installations required." />
+    <title>HDT — Hardware Diagnostic Tool</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense (Replace ca-pub-XXXXXXXXXXXXXXXX with your actual Publisher ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+    <!-- Theme Initializer (Defaults to dark / black theme) -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('hdt_theme');
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+          } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = 'dark';
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-[#EAEFF6] dark:bg-[#0B1120] text-[#172B4D] dark:text-[#F1F5F9] font-sans antialiased min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
